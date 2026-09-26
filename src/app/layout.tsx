@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Anton, Inter, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { Providers } from "@/components/layout/providers";
 import { preloaderScript } from "@/components/layout/preloader";
 import { site } from "@/lib/site";
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       <body className="grain min-h-dvh antialiased">
         <Providers>{children}</Providers>
+        <Analytics />
       </body>
     </html>
   );
