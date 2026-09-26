@@ -1,0 +1,249 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────────────
+   ATHLEX design tokens
+   One accent (volt), a charcoal ramp, bone-white type.
+   ───────────────────────────────────────────────────────────────────── */
+@theme {
+  --color-ink: #060606;
+  --color-coal: #0c0c0d;
+  --color-graphite: #141416;
+  --color-steel: #1e1e21;
+  --color-iron: #2a2a2e;
+  --color-ash: #5c5c63;
+  --color-smoke: #9a9aa1;
+  --color-bone: #f3f3ef;
+  --color-volt: #c8ff2e;
+  --color-volt-soft: #d9ff6b;
+  --color-volt-deep: #9fcc1f;
+  --color-danger: #ff5a4e;
+  --color-warn: #ffb547;
+  --color-ok: #3ee08f;
+
+  --font-display: var(--font-anton), "Impact", "Arial Narrow", sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  --radius-card: 6px;
+
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-quart: cubic-bezier(0.76, 0, 0.24, 1);
+
+  --breakpoint-xs: 26rem;
+  --breakpoint-3xl: 112rem;
+
+  --animate-marquee: marquee var(--marquee-duration, 40s) linear infinite;
+  --animate-marquee-reverse: marquee-reverse var(--marquee-duration, 40s) linear infinite;
+  --animate-scroll-dot: scroll-dot 1.8s var(--ease-expo) infinite;
+  --animate-gradient-drift: gradient-drift 18s ease-in-out infinite alternate;
+  --animate-shimmer: shimmer 1.6s linear infinite;
+  --animate-pulse-ring: pulse-ring 2.4s var(--ease-expo) infinite;
+
+  @keyframes marquee {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-50%, 0, 0); }
+  }
+  @keyframes marquee-reverse {
+    from { transform: translate3d(-50%, 0, 0); }
+    to { transform: translate3d(0, 0, 0); }
+  }
+  @keyframes scroll-dot {
+    0% { transform: translateY(-100%); opacity: 0; }
+    30% { opacity: 1; }
+    100% { transform: translateY(220%); opacity: 0; }
+  }
+  @keyframes gradient-drift {
+    0% { transform: translate3d(-10%, -6%, 0) scale(1); }
+    100% { transform: translate3d(8%, 6%, 0) scale(1.15); }
+  }
+  @keyframes shimmer {
+    from { background-position: -200% 0; }
+    to { background-position: 200% 0; }
+  }
+  @keyframes pulse-ring {
+    0% { transform: scale(0.9); opacity: 0.7; }
+    100% { transform: scale(var(--ring-scale, 1.8)); opacity: 0; }
+  }
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --header-h: 76px;
+  }
+
+  html {
+    overflow-x: clip;
+    background: var(--color-ink);
+    -webkit-tap-highlight-color: transparent;
+    scroll-padding-top: var(--header-h);
+  }
+
+  body {
+    overflow-x: clip;
+    background: var(--color-ink);
+    color: var(--color-bone);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-volt);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-volt);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  /* Native date/time pickers: light glyphs on dark fields */
+  input[type="date"]::-webkit-calendar-picker-indicator,
+  input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 0.6;
+  }
+
+  @media (pointer: fine) {
+    html.has-custom-cursor,
+    html.has-custom-cursor * {
+      cursor: none !important;
+    }
+  }
+}
+
+@layer components {
+  /* Display type: condensed, uppercase, tight */
+  .display {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: -0.005em;
+    line-height: 0.88;
+    font-weight: 400;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-volt);
+  }
+
+  .container-x {
+    width: 100%;
+    margin-inline: auto;
+    max-width: 96rem;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 48rem) {
+    .container-x { padding-inline: 2.5rem; }
+  }
+  @media (min-width: 80rem) {
+    .container-x { padding-inline: 4rem; }
+  }
+
+  .section-y {
+    padding-block: 6rem;
+  }
+  @media (min-width: 64rem) {
+    .section-y { padding-block: 9rem; }
+  }
+
+  .glass {
+    background: color-mix(in oklab, var(--color-coal) 62%, transparent);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid rgb(255 255 255 / 0.07);
+  }
+
+  .hairline {
+    border-color: rgb(255 255 255 / 0.08);
+  }
+
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(243 243 239 / 0.28);
+  }
+
+  .volt-glow {
+    box-shadow: 0 0 0 1px rgb(200 255 46 / 0.35), 0 20px 80px -20px rgb(200 255 46 / 0.35);
+  }
+
+  .skeleton {
+    background: linear-gradient(90deg, var(--color-graphite) 0%, var(--color-steel) 50%, var(--color-graphite) 100%);
+    background-size: 200% 100%;
+    animation: var(--animate-shimmer);
+    border-radius: var(--radius-card);
+  }
+
+  .field {
+    width: 100%;
+    background: var(--color-graphite);
+    border: 1px solid rgb(255 255 255 / 0.09);
+    border-radius: var(--radius-card);
+    padding: 0.85rem 1rem;
+    color: var(--color-bone);
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  }
+  .field::placeholder {
+    color: var(--color-ash);
+  }
+  .field:hover {
+    border-color: rgb(255 255 255 / 0.16);
+  }
+  .field:focus {
+    outline: none;
+    border-color: var(--color-volt);
+    box-shadow: 0 0 0 3px rgb(200 255 46 / 0.14);
+  }
+  .field[aria-invalid="true"] {
+    border-color: var(--color-danger);
+    box-shadow: 0 0 0 3px rgb(255 90 78 / 0.12);
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mask-fade-x {
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+}
+
+/* Film grain overlay */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.skip-preloader #preloader {
+  display: none !important;
+}
