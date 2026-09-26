@@ -35,7 +35,7 @@ export default async function DietPage() {
       </PageHeader>
       <div className="grid gap-4 lg:grid-cols-3">
         <Card title="Daily target" className="flex flex-col items-center">
-          <Ring value={totals.cal} max={plan.daily_calories} size={170} label={<span><span className="display block text-5xl">{plan.daily_calories.toLocaleString("en-IN")}</span><span className="font-mono text-[0.55rem] uppercase tracking-[0.2em] text-smoke">kcal / day</span></span>} />
+          <Ring value={totals.cal} max={plan.daily_calories} size={170} label={<span><span className="display block text-5xl">{plan.daily_calories.toLocaleString("en-IN")}</span><span className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">kcal / day</span></span>} />
           <p className="mt-4 text-xs text-smoke">Meals below add up to {totals.cal.toLocaleString("en-IN")} kcal</p>
         </Card>
         <Card title="Macros" className="lg:col-span-2">
@@ -76,7 +76,7 @@ export default async function DietPage() {
                     ["F", `${m.fats_g}g`],
                   ].map(([k, v]) => (
                     <div key={k}>
-                      <dt className="font-mono text-[0.55rem] uppercase text-smoke">{k}</dt>
+                      <dt className="font-mono text-[0.7rem] uppercase text-smoke">{k}</dt>
                       <dd className="font-bold">{v}</dd>
                     </div>
                   ))}

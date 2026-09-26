@@ -19,7 +19,7 @@ export function Card({ children, className, title, action }: { children: ReactNo
     <section className={cn("rounded-[var(--radius-card)] border border-white/[0.07] bg-coal p-5 sm:p-6", className)}>
       {(title || action) && (
         <div className="mb-5 flex items-center justify-between gap-4">
-          {title && <h2 className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-smoke">{title}</h2>}
+          {title && <h2 className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">{title}</h2>}
           {action}
         </div>
       )}
@@ -33,7 +33,7 @@ export function Stat({ label, value, hint, tone, icon }: { label: string; value:
   return (
     <div className="rounded-[var(--radius-card)] border border-white/[0.07] bg-coal p-5">
       <div className="flex items-center justify-between">
-        <p className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-smoke">{label}</p>
+        <p className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">{label}</p>
         {icon && <span className="text-ash">{icon}</span>}
       </div>
       <p className={cn("display mt-3 text-4xl tabular-nums", tone && tones[tone])}>{value}</p>

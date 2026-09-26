@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
  */
 export function Photo({ className, alt, ...props }: ImageProps) {
   const [failed, setFailed] = useState(false);
+  const [loaded, setLoaded] = useState(false);
   if (failed) {
     return (
       <div
@@ -25,5 +26,14 @@ export function Photo({ className, alt, ...props }: ImageProps) {
       </div>
     );
   }
-  return <Image alt={alt} className={className} onError={() => setFailed(true)} {...props} />;
+  return (
+    <Image
+      alt={alt}
+      className={className}
+      data-fade={loaded || props.priority ? "done" : "loading"}
+      onLoad={() => setLoaded(true)}
+      onError={() => setFailed(true)}
+      {...props}
+    />
+  );
 }

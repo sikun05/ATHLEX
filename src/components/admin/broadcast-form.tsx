@@ -45,7 +45,7 @@ export function BroadcastForm() {
         <textarea id="b-body" name="body" className="field min-h-28" required minLength={5} maxLength={1000} />
       </Field>
       <fieldset>
-        <legend className="mb-2 font-mono text-[0.68rem] uppercase tracking-[0.18em] text-smoke">Channels</legend>
+        <legend className="mb-2 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-smoke">Channels</legend>
         <div className="flex flex-wrap gap-4 text-sm">
           {[
             ["in_app", "In-app"],

@@ -13,7 +13,7 @@ export default function AuthLayout({ children }: LayoutProps<"/">) {
         <Photo src={media.heroAlt} alt="" fill priority sizes="50vw" className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/20" />
         <div className="absolute inset-x-12 bottom-12">
-          <p className="display text-7xl leading-[0.85]">
+          <p className="display text-6xl sm:text-7xl leading-[0.85]">
             Show up.
             <br />
             <span className="text-volt">Level up.</span>
@@ -28,7 +28,7 @@ export default function AuthLayout({ children }: LayoutProps<"/">) {
         <div className="mx-auto flex w-full max-w-md flex-1 flex-col justify-center py-12">{children}</div>
         {demo && (
           <details className="mx-auto w-full max-w-md rounded-[var(--radius-card)] border border-volt/25 bg-volt/5 p-4 text-sm">
-            <summary className="cursor-pointer font-mono text-[0.68rem] uppercase tracking-[0.18em] text-volt">Demo mode · test accounts</summary>
+            <summary className="cursor-pointer font-mono text-[0.7rem] uppercase tracking-[0.18em] text-volt">Demo mode · test accounts</summary>
             <p className="mt-3 text-xs text-smoke">Supabase isn&apos;t configured, so data lives in memory and resets on restart.</p>
             <ul className="mt-3 space-y-1 font-mono text-xs">
               {DEMO_ACCOUNTS.map((a) => (

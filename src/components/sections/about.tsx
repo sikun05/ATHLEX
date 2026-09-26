@@ -20,7 +20,7 @@ export function About({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
               <Photo src={media.aboutDetail} alt="Coach guiding a member" fill sizes="224px" className="object-cover" />
             </div>
           </Reveal>
-          <div className="absolute left-4 top-4 rounded-full bg-ink/70 px-4 py-2 font-mono text-[0.62rem] uppercase tracking-[0.2em] text-volt backdrop-blur">
+          <div className="absolute left-4 top-4 rounded-full bg-ink/70 px-4 py-2 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-volt backdrop-blur">
             Est. 2020 · Bengaluru
           </div>
         </div>
@@ -43,7 +43,7 @@ export function About({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
           <dl className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-[var(--radius-card)] border border-white/[0.06] bg-white/[0.06]">
             {stats.map((s, i) => (
               <Reveal key={s.label} delay={0.1 + i * 0.08} className="bg-ink p-6 sm:p-8">
-                <dt className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-smoke">{s.label}</dt>
+                <dt className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">{s.label}</dt>
                 <dd className="display mt-2 text-5xl sm:text-6xl">
                   <Counter to={s.value} suffix={s.suffix} />
                 </dd>

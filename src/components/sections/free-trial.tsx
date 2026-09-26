@@ -36,7 +36,7 @@ export function FreeTrial() {
           </Magnetic>
         </Reveal>
         <Reveal delay={0.4}>
-          <ul className="mt-12 flex flex-wrap justify-center gap-x-8 gap-y-3 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-smoke">
+          <ul className="mt-12 flex flex-wrap justify-center gap-x-8 gap-y-3 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">
             <li>✓ Guided tour</li>
             <li>✓ Fitness assessment</li>
             <li>✓ Coached session</li>

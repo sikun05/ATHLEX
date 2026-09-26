@@ -34,7 +34,7 @@ export default function ProgramsPage() {
                   <ArrowUpRight className="size-4" />
                 </span>
                 <div className="absolute inset-x-0 bottom-0 p-6">
-                  <p className="flex items-center gap-3 font-mono text-[0.62rem] uppercase tracking-[0.2em] text-volt">
+                  <p className="flex items-center gap-3 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-volt">
                     {p.level} · {p.duration}
                     <span className="flex" aria-label={`Intensity ${p.intensity} of 5`}>
                       {Array.from({ length: 5 }, (_, k) => (

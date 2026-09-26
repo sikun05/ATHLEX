@@ -45,7 +45,7 @@ export default async function DashboardPage() {
         <Card className="xl:col-span-2">
           {membership ? (
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
-              <Ring value={membership.daysRemaining} max={totalDays} size={140} label={<span><span className="display block text-4xl">{membership.daysRemaining}</span><span className="font-mono text-[0.55rem] uppercase tracking-[0.2em] text-smoke">days left</span></span>} />
+              <Ring value={membership.daysRemaining} max={totalDays} size={140} label={<span><span className="display block text-4xl">{membership.daysRemaining}</span><span className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">days left</span></span>} />
               <div className="flex-1">
                 <div className="flex items-center gap-2">
                   <Badge tone={membership.daysRemaining <= 7 ? "warn" : "ok"}>{membership.daysRemaining <= 7 ? "Expiring soon" : "Active"}</Badge>
@@ -85,7 +85,7 @@ export default async function DashboardPage() {
               {classes.map((c) => (
                 <li key={c.id} className="flex items-center gap-4 rounded-md bg-graphite p-3">
                   <div className="w-12 text-center">
-                    <p className="font-mono text-[0.6rem] uppercase text-smoke">{formatDate(c.date, { weekday: "short" })}</p>
+                    <p className="font-mono text-[0.7rem] uppercase text-smoke">{formatDate(c.date, { weekday: "short" })}</p>
                     <p className="display text-2xl">{formatDate(c.date, { day: "2-digit" })}</p>
                   </div>
                   <div className="min-w-0">
@@ -154,7 +154,7 @@ export default async function DashboardPage() {
                   <p className="text-sm font-semibold">{n.title}</p>
                   <p className="text-sm text-smoke">{n.body}</p>
                 </div>
-                <time className="shrink-0 font-mono text-[0.6rem] text-ash">{formatDate(n.created_at, { day: "numeric", month: "short" })}</time>
+                <time className="shrink-0 font-mono text-[0.7rem] text-ash">{formatDate(n.created_at, { day: "numeric", month: "short" })}</time>
               </li>
             ))}
           </ul>

@@ -33,7 +33,7 @@ export default async function TrainersPage() {
                   <Photo src={t.image} alt={`${t.name}, ${t.position}`} fill sizes="(min-width:768px) 42vw, 100vw" className="object-cover" />
                 </div>
                 <div className="flex flex-col justify-center p-8 sm:p-12 md:col-span-7">
-                  <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-volt">
+                  <p className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-volt">
                     {t.position} · {t.experienceYears} years
                   </p>
                   <h2 className="display mt-3 text-5xl sm:text-7xl">{t.name}</h2>

@@ -116,8 +116,8 @@ export function SplitWords({
           <motion.span
             className={cn("inline-block", wordClassName, highlight?.includes(i) && "text-volt")}
             variants={{
-              hidden: { y: "105%", opacity: 0, filter: "blur(10px)" },
-              show: { y: "0%", opacity: 1, filter: "blur(0px)", transition: { duration: 1, ease: EASE } },
+              hidden: { y: "105%", opacity: 0 },
+              show: { y: "0%", opacity: 1, transition: { duration: 1, ease: EASE } },
             }}
           >
             {w}

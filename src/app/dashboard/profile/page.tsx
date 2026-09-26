@@ -47,11 +47,11 @@ export default async function ProfilePage() {
             {m && (
               <dl className="mt-6 grid grid-cols-2 gap-4 border-t border-white/[0.06] pt-5 text-sm">
                 <div>
-                  <dt className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-smoke">Member ID</dt>
+                  <dt className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">Member ID</dt>
                   <dd className="mt-1 font-mono">{m.member_code}</dd>
                 </div>
                 <div>
-                  <dt className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-smoke">Joined</dt>
+                  <dt className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">Joined</dt>
                   <dd className="mt-1">{formatDate(m.joined_at)}</dd>
                 </div>
               </dl>

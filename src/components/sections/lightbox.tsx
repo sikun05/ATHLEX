@@ -95,7 +95,7 @@ export function Lightbox({ items, index, onClose, onIndex }: { items: GalleryIte
 
           <div className="p-4 text-center sm:p-6">
             <p className="display text-2xl">{item.title}</p>
-            <p className="mt-1 font-mono text-[0.62rem] uppercase tracking-[0.2em] text-smoke">
+            <p className="mt-1 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">
               {item.category} <span className="sm:hidden">· swipe to browse</span>
               <span className="hidden sm:inline">· ← → to browse · esc to close</span>
             </p>

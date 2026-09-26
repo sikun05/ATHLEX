@@ -152,7 +152,7 @@ export function ProgressPhotos({ photos }: { photos: { id: string; url: string |
                 // eslint-disable-next-line @next/next/no-img-element -- signed/private URLs bypass the image optimizer
                 <img src={p.url} alt={`Progress photo from ${formatDate(p.takenOn)}`} className="size-full object-cover" loading="lazy" />
               )}
-              <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink to-transparent p-2 font-mono text-[0.6rem]">{formatDate(p.takenOn)}</span>
+              <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink to-transparent p-2 font-mono text-[0.7rem]">{formatDate(p.takenOn)}</span>
               <button onClick={() => remove(p.id)} aria-label="Delete photo" className="absolute right-2 top-2 grid size-8 place-items-center rounded-full bg-ink/70 text-bone opacity-100 transition hover:text-danger sm:opacity-0 sm:group-hover:opacity-100 sm:focus:opacity-100">
                 <Trash2 className="size-3.5" />
               </button>

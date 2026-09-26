@@ -41,7 +41,7 @@ export function Hero() {
   }, [mx, my, reduce]);
 
   return (
-    <section ref={ref} aria-label="Introduction" className="relative flex h-[100svh] min-h-[640px] items-end overflow-hidden bg-ink">
+    <section ref={ref} aria-label="Introduction" className="relative flex min-h-[max(100svh,640px)] items-end overflow-hidden bg-ink">
       {/* Background media */}
       <motion.div
         className="absolute inset-0"
@@ -68,7 +68,7 @@ export function Hero() {
       <div className="absolute inset-0 shadow-[inset_0_0_200px_60px_rgba(0,0,0,0.8)]" aria-hidden />
 
       {/* Content */}
-      <motion.div style={reduce ? undefined : { y: contentY, opacity: fade }} className="container-x relative z-10 pb-24 sm:pb-28 lg:pb-32">
+      <motion.div style={reduce ? undefined : { y: contentY, opacity: fade }} className="container-x relative z-10 pb-24 pt-[calc(var(--header-h)+2rem)] sm:pb-28 lg:pb-32">
         <motion.p
           className="eyebrow mb-6 flex items-center gap-3"
           initial={{ opacity: 0, x: -20 }}
@@ -84,8 +84,8 @@ export function Hero() {
             <span key={w} aria-hidden className="block overflow-hidden pb-[0.04em] sm:inline-block sm:pr-[0.18em]">
               <motion.span
                 className={`inline-block ${w === "strongest" ? "text-volt" : ""}`}
-                initial={{ y: "100%", opacity: 0, filter: "blur(12px)" }}
-                animate={ready ? { y: "0%", opacity: 1, filter: "blur(0px)" } : undefined}
+                initial={{ y: "100%", opacity: 0 }}
+                animate={ready ? { y: "0%", opacity: 1 } : undefined}
                 transition={{ duration: 1.1, delay: 0.2 + i * 0.12, ease: EASE }}
               >
                 {w}
@@ -133,7 +133,7 @@ export function Hero() {
         animate={ready ? { opacity: 1 } : undefined}
         transition={{ delay: 1.4, duration: 0.8 }}
       >
-        <span className="font-mono text-[0.62rem] tracking-[0.3em]">SCROLL TO EXPLORE ↓</span>
+        <span className="font-mono text-[0.7rem] tracking-[0.3em]">SCROLL TO EXPLORE ↓</span>
         <span className="relative h-12 w-px overflow-hidden bg-white/15" aria-hidden>
           <span className="absolute inset-x-0 top-0 h-1/2 animate-scroll-dot bg-volt" />
         </span>
@@ -154,7 +154,7 @@ export function Hero() {
         ].map(([v, l]) => (
           <li key={l}>
             <p className="display text-4xl">{v}</p>
-            <p className="font-mono text-[0.62rem] uppercase tracking-[0.2em] text-smoke">{l}</p>
+            <p className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">{l}</p>
           </li>
         ))}
       </motion.ul>

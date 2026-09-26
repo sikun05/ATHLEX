@@ -56,7 +56,7 @@ export default async function MembershipPage() {
         <div className="container-x -mt-6 mb-6">
           <Reveal className="flex flex-col items-start gap-3 rounded-[var(--radius-card)] border border-volt/30 bg-volt/10 p-5 sm:flex-row sm:items-center sm:justify-between">
             <p>
-              <span className="mr-3 rounded bg-volt px-2 py-1 font-mono text-[0.65rem] font-bold uppercase text-ink">{offer.discount_label ?? "Offer"}</span>
+              <span className="mr-3 rounded bg-volt px-2 py-1 font-mono text-[0.7rem] font-bold uppercase text-ink">{offer.discount_label ?? "Offer"}</span>
               <strong>{offer.title}</strong> <span className="text-smoke">— {offer.description}</span>
             </p>
           </Reveal>
@@ -74,7 +74,7 @@ export default async function MembershipPage() {
               <caption className="sr-only">Feature comparison across membership plans</caption>
               <thead className="bg-graphite">
                 <tr>
-                  <th scope="col" className="p-5 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-smoke">
+                  <th scope="col" className="p-5 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">
                     Feature
                   </th>
                   {plans.map((p) => (

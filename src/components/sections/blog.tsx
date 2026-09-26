@@ -33,9 +33,9 @@ export function PostCard({ post: p }: { post: BlogPost }) {
     <article className="group relative flex h-full flex-col">
       <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] bg-graphite">
         <Photo src={p.image} alt="" fill sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw" className="object-cover transition-transform duration-[1.2s] ease-[var(--ease-expo)] group-hover:scale-105" />
-        <span className="absolute left-4 top-4 rounded-full bg-ink/70 px-3 py-1.5 font-mono text-[0.6rem] uppercase tracking-[0.18em] text-volt backdrop-blur">{p.category}</span>
+        <span className="absolute left-4 top-4 rounded-full bg-ink/70 px-3 py-1.5 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-volt backdrop-blur">{p.category}</span>
       </div>
-      <div className="mt-5 flex items-center gap-3 font-mono text-[0.65rem] uppercase tracking-[0.16em] text-smoke">
+      <div className="mt-5 flex items-center gap-3 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-smoke">
         <time dateTime={p.date}>{formatDate(p.date)}</time>
         <span aria-hidden>·</span>
         <span className="inline-flex items-center gap-1">

@@ -97,7 +97,7 @@ export function Contact({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" })
 function Info({ icon, label, children, className }: { icon: React.ReactNode; label: string; children: React.ReactNode; className?: string }) {
   return (
     <div className={`bg-graphite p-6 ${className ?? ""}`}>
-      <p className="mb-3 flex items-center gap-2 font-mono text-[0.62rem] uppercase tracking-[0.2em] text-volt">
+      <p className="mb-3 flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-volt">
         {icon}
         {label}
       </p>

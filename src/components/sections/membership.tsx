@@ -46,11 +46,11 @@ export function PlanCard({ plan: p }: { plan: Plan }) {
       )}
     >
       {p.highlighted && (
-        <span className="absolute right-6 top-6 inline-flex items-center gap-1.5 rounded-full bg-volt px-3 py-1.5 font-mono text-[0.6rem] font-bold uppercase tracking-[0.15em] text-ink">
+        <span className="absolute right-6 top-6 inline-flex items-center gap-1.5 rounded-full bg-volt px-3 py-1.5 font-mono text-[0.7rem] font-bold uppercase tracking-[0.15em] text-ink">
           <Sparkles className="size-3" /> Most popular
         </span>
       )}
-      <p className="font-mono text-[0.68rem] uppercase tracking-[0.22em] text-smoke">
+      <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-smoke">
         {p.durationMonths} {p.durationMonths === 1 ? "Month" : "Months"}
       </p>
       <h3 className={cn("display mt-3 text-5xl", p.highlighted && "text-volt")}>{p.name}</h3>
@@ -58,7 +58,7 @@ export function PlanCard({ plan: p }: { plan: Plan }) {
 
       <div className="mt-8 border-t border-white/[0.08] pt-8">
         <div className="flex items-end gap-3">
-          <span className="display text-6xl">{inr(p.price)}</span>
+          <span className="display text-5xl sm:text-6xl">{inr(p.price)}</span>
         </div>
         <p className="mt-2 flex flex-wrap items-center gap-2 text-xs text-smoke">
           {p.compareAt && <span className="line-through decoration-danger/70">{inr(p.compareAt)}</span>}

@@ -105,7 +105,7 @@ export function Scanner() {
             if (code.trim()) submit(code.trim().startsWith("ATX1.") ? { token: code.trim() } : { memberCode: code.trim().toUpperCase() });
           }}
         >
-          <label htmlFor="member-code" className="flex items-center gap-2 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-smoke">
+          <label htmlFor="member-code" className="flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-smoke">
             <Keyboard className="size-3.5" /> Manual check-in
           </label>
           <div className="mt-2 flex gap-2">

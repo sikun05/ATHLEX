@@ -42,7 +42,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en-IN" className={`${anton.variable} ${inter.variable} ${mono.variable}`} suppressHydrationWarning>
+    <html lang="en-IN" data-scroll-behavior="smooth" className={`${anton.variable} ${inter.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: preloaderScript }} />
       </head>

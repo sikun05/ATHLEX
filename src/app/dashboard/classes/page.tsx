@@ -24,7 +24,7 @@ export default async function ClassesPage() {
               {classes.map((c) => (
                 <li key={c.id} className="flex flex-wrap items-center gap-4 py-4">
                   <div className="w-14 text-center">
-                    <p className="font-mono text-[0.6rem] uppercase text-smoke">{formatDate(c.date, { weekday: "short" })}</p>
+                    <p className="font-mono text-[0.7rem] uppercase text-smoke">{formatDate(c.date, { weekday: "short" })}</p>
                     <p className="display text-3xl">{formatDate(c.date, { day: "2-digit" })}</p>
                   </div>
                   <div className="min-w-0 flex-1">

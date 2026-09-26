@@ -79,7 +79,7 @@ export function Preloader() {
             <span className="display text-5xl tracking-[0.08em]">ATHLEX</span>
           </motion.div>
           <div className="absolute bottom-12 left-1/2 w-56 -translate-x-1/2">
-            <div className="mb-3 flex justify-between font-mono text-[0.65rem] tracking-[0.2em] text-smoke">
+            <div className="mb-3 flex justify-between font-mono text-[0.7rem] tracking-[0.2em] text-smoke">
               <span>LOADING</span>
               <span className="tabular-nums text-volt">{String(progress).padStart(3, "0")}</span>
             </div>

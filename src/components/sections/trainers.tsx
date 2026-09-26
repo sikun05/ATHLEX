@@ -55,11 +55,11 @@ export function TrainerCard({ trainer: t }: { trainer: Trainer }) {
       <div className="absolute inset-0 bg-ink/0 transition-colors duration-500 group-hover:bg-ink/55 group-focus-within:bg-ink/55" aria-hidden />
 
       <div className="absolute left-5 top-5">
-        <span className="rounded-full bg-ink/60 px-3 py-1.5 font-mono text-[0.6rem] uppercase tracking-[0.2em] text-volt backdrop-blur">{t.experienceYears} yrs exp.</span>
+        <span className="rounded-full bg-ink/60 px-3 py-1.5 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-volt backdrop-blur">{t.experienceYears} yrs exp.</span>
       </div>
 
       <div className="absolute inset-x-0 bottom-0 p-6">
-        <p className="font-mono text-[0.62rem] uppercase tracking-[0.2em] text-volt">{t.position}</p>
+        <p className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-volt">{t.position}</p>
         <h3 className="display mt-2 text-4xl">{t.name}</h3>
         <p className="mt-1 text-sm text-bone/70">{t.specialization}</p>
 
@@ -70,7 +70,7 @@ export function TrainerCard({ trainer: t }: { trainer: Trainer }) {
             <div className="mt-5 flex items-center justify-between gap-3">
               <Link
                 href={`/trainers#${t.slug}`}
-                className="inline-flex items-center gap-2 rounded-full bg-volt px-4 py-2.5 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-ink transition hover:bg-volt-soft"
+                className="inline-flex items-center gap-2 rounded-full bg-volt px-4 py-2.5 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-ink transition hover:bg-volt-soft"
               >
                 Train with {t.name.split(" ")[0]} <ArrowUpRight className="size-3.5" />
               </Link>

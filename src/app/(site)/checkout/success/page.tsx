@@ -26,7 +26,7 @@ export default async function SuccessPage({ searchParams }: PageProps<"/checkout
     <div className="container-x max-w-3xl pb-24 pt-36">
       <div className="text-center print:hidden">
         <CheckCircle2 className={`mx-auto size-16 ${paid ? "text-volt" : "text-warn"}`} />
-        <h1 className="display mt-6 text-6xl">{paid ? "You're in." : "Payment processing"}</h1>
+        <h1 className="display mt-6 text-5xl sm:text-6xl">{paid ? "You're in." : "Payment processing"}</h1>
         <p className="mt-3 text-smoke">
           {paid ? `Welcome to ${site.name}, ${user.name.split(" ")[0]}. A confirmation has been sent to ${user.email}.` : "We're confirming your payment with the bank. This page will update once it's verified."}
         </p>
@@ -42,7 +42,7 @@ export default async function SuccessPage({ searchParams }: PageProps<"/checkout
             </p>
           </div>
           <div className="text-right">
-            <p className="font-mono text-[0.62rem] uppercase tracking-[0.2em] text-smoke">Receipt</p>
+            <p className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">Receipt</p>
             <p className="font-mono text-sm">{payment.receipt_number ?? "—"}</p>
             <p className="text-xs text-smoke">{payment.paid_at ? formatDate(payment.paid_at) : ""}</p>
           </div>
@@ -86,7 +86,7 @@ export default async function SuccessPage({ searchParams }: PageProps<"/checkout
 function Row({ k, v, mono }: { k: string; v: string; mono?: boolean }) {
   return (
     <div>
-      <dt className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-smoke">{k}</dt>
+      <dt className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">{k}</dt>
       <dd className={`mt-1 ${mono ? "font-mono text-xs" : ""}`}>{v}</dd>
     </div>
   );

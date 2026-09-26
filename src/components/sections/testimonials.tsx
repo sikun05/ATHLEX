@@ -54,9 +54,9 @@ export function Testimonials({ items }: { items: Testimonial[] }) {
                 key={t.id}
                 custom={dir}
                 variants={{
-                  enter: (d: number) => ({ x: d * 120, opacity: 0, filter: "blur(8px)" }),
-                  center: { x: 0, opacity: 1, filter: "blur(0px)" },
-                  exit: (d: number) => ({ x: d * -120, opacity: 0, filter: "blur(8px)" }),
+                  enter: (d: number) => ({ x: d * 120, opacity: 0 }),
+                  center: { x: 0, opacity: 1 },
+                  exit: (d: number) => ({ x: d * -120, opacity: 0 }),
                 }}
                 initial="enter"
                 animate="center"
@@ -96,7 +96,7 @@ export function Testimonials({ items }: { items: Testimonial[] }) {
           </div>
 
           <div className="flex items-center justify-between gap-6 lg:col-span-3 lg:flex-col lg:items-end">
-            <p className="display text-7xl tabular-nums">
+            <p className="display text-6xl sm:text-7xl tabular-nums">
               {pad(index + 1)}
               <span className="text-2xl text-ash">/{pad(items.length)}</span>
             </p>
@@ -111,7 +111,7 @@ export function Testimonials({ items }: { items: Testimonial[] }) {
           </div>
         </div>
 
-        <div className="mt-12 flex gap-2" role="tablist" aria-label="Choose testimonial">
+        <div className="mt-10 flex gap-2" role="tablist" aria-label="Choose testimonial">
           {items.map((it, i) => (
             <button
               key={it.id}
@@ -119,18 +119,20 @@ export function Testimonials({ items }: { items: Testimonial[] }) {
               aria-selected={i === index}
               aria-label={`Show testimonial from ${it.name}`}
               onClick={() => setState([i, i > index ? 1 : -1])}
-              className="relative h-1 flex-1 overflow-hidden rounded-full bg-white/10"
+              className="relative h-6 flex-1"
             >
-              {i === index && (
-                <motion.span
-                  key={`${index}-${paused}`}
-                  className="absolute inset-y-0 left-0 bg-volt"
-                  initial={{ width: reduce || paused ? "100%" : "0%" }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: reduce || paused ? 0 : 7, ease: "linear" }}
-                />
-              )}
-              {i < index && <span className="absolute inset-0 bg-white/30" />}
+              <span className="absolute inset-x-0 top-1/2 h-1 -translate-y-1/2 overflow-hidden rounded-full bg-white/10">
+                {i === index && (
+                  <motion.span
+                    key={`${index}-${paused}`}
+                    className="absolute inset-0 origin-left bg-volt"
+                    initial={{ scaleX: reduce || paused ? 1 : 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: reduce || paused ? 0 : 7, ease: "linear" }}
+                  />
+                )}
+                {i < index && <span className="absolute inset-0 bg-white/30" />}
+              </span>
             </button>
           ))}
         </div>

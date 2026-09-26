@@ -113,7 +113,7 @@ export function Schedule({ classes, schedules, trainers, headingLevel = "h2", co
                 {active && <motion.span layoutId="day-pill" className="absolute inset-0 rounded-full bg-volt" transition={{ type: "spring", stiffness: 400, damping: 32 }} />}
                 <span className="relative">
                   {d === "all" ? "All week" : DAYS[d].slice(0, 3)}
-                  {d === todayIdx() && <span className="ml-1.5 font-mono text-[0.55rem] opacity-70">TODAY</span>}
+                  {d === todayIdx() && <span className="ml-1.5 font-mono text-[0.7rem] opacity-70">TODAY</span>}
                 </span>
               </button>
             );
@@ -140,7 +140,7 @@ export function Schedule({ classes, schedules, trainers, headingLevel = "h2", co
               <X className="size-3" /> Clear filters
             </button>
           )}
-          <p className="ml-auto font-mono text-[0.65rem] uppercase tracking-[0.2em] text-ash" aria-live="polite">
+          <p className="ml-auto font-mono text-[0.7rem] uppercase tracking-[0.2em] text-ash" aria-live="polite">
             {filtered.length} classes
           </p>
         </div>
@@ -160,7 +160,7 @@ export function Schedule({ classes, schedules, trainers, headingLevel = "h2", co
               <motion.div key={name} layout initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.4 }}>
                 <h3 className="mb-3 flex items-baseline gap-3">
                   <span className="display text-3xl">{name}</span>
-                  {i === todayIdx() && <span className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-volt">Today</span>}
+                  {i === todayIdx() && <span className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-volt">Today</span>}
                 </h3>
                 <ul className="divide-y divide-white/[0.06] overflow-hidden rounded-[var(--radius-card)] border border-white/[0.06]">
                   {items.map((s) => {
@@ -177,7 +177,7 @@ export function Schedule({ classes, schedules, trainers, headingLevel = "h2", co
                         <div>
                           <p className="font-semibold">{c.name}</p>
                           <p className="mt-0.5 flex items-center gap-2 text-xs text-smoke">
-                            <span className="rounded bg-white/5 px-1.5 py-0.5 font-mono text-[0.6rem] uppercase tracking-wider">{c.category}</span>
+                            <span className="rounded bg-white/5 px-1.5 py-0.5 font-mono text-[0.7rem] uppercase tracking-wider">{c.category}</span>
                             <span className="flex" aria-label={`Intensity ${c.intensity} of 5`}>
                               {Array.from({ length: 5 }, (_, k) => (
                                 <Flame key={k} className={cn("size-3", k < c.intensity ? "text-volt" : "text-white/15")} aria-hidden />
@@ -186,7 +186,7 @@ export function Schedule({ classes, schedules, trainers, headingLevel = "h2", co
                           </p>
                         </div>
                         <p className="col-span-2 flex items-center gap-2 text-sm text-smoke md:col-span-1">
-                          <span className="size-6 shrink-0 rounded-full bg-steel text-center font-mono text-[0.6rem] leading-6 text-bone">{t?.name.split(" ").map((p) => p[0]).join("")}</span>
+                          <span className="size-6 shrink-0 rounded-full bg-steel text-center font-mono text-[0.7rem] leading-6 text-bone">{t?.name.split(" ").map((p) => p[0]).join("")}</span>
                           {t?.name ?? "TBA"}
                         </p>
                         <div className="col-span-2 flex items-center gap-4 text-xs text-smoke md:col-span-1">
@@ -202,7 +202,7 @@ export function Schedule({ classes, schedules, trainers, headingLevel = "h2", co
                           disabled={full || pending === s.id || booked[s.id]}
                           data-cursor="click"
                           className={cn(
-                            "col-span-2 h-11 rounded-full px-6 text-[0.68rem] font-bold uppercase tracking-[0.12em] transition md:col-span-1",
+                            "col-span-2 h-11 rounded-full px-6 text-[0.7rem] font-bold uppercase tracking-[0.12em] transition md:col-span-1",
                             booked[s.id] ? "bg-ok/15 text-ok" : full ? "cursor-not-allowed bg-white/5 text-ash" : "bg-bone text-ink hover:bg-volt",
                           )}
                         >

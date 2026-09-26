@@ -108,7 +108,7 @@ export default async function ProgramPage({ params }: PageProps<"/programs/[slug
 function Meta({ icon, label, value }: { icon: React.ReactNode; label: string; value: React.ReactNode }) {
   return (
     <div>
-      <dt className="flex items-center gap-1.5 font-mono text-[0.6rem] uppercase tracking-[0.18em] text-smoke">
+      <dt className="flex items-center gap-1.5 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-smoke">
         {icon}
         {label}
       </dt>

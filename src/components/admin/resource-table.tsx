@@ -133,7 +133,7 @@ export function ResourceTable({
           {/* Desktop table */}
           <div className="hidden overflow-x-auto rounded-[var(--radius-card)] border border-white/[0.07] md:block">
             <table className="w-full text-left text-sm">
-              <thead className="bg-coal font-mono text-[0.6rem] uppercase tracking-[0.18em] text-smoke">
+              <thead className="bg-coal font-mono text-[0.7rem] uppercase tracking-[0.18em] text-smoke">
                 <tr>
                   {res.columns.map((c) => (
                     <th key={c.key} scope="col" className="whitespace-nowrap px-4 py-3 font-normal">
@@ -175,7 +175,7 @@ export function ResourceTable({
                     .filter((c) => c.type !== "image")
                     .map((c) => (
                       <div key={c.key} className="min-w-0">
-                        <dt className="font-mono text-[0.55rem] uppercase tracking-[0.18em] text-ash">{c.label}</dt>
+                        <dt className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-ash">{c.label}</dt>
                         <dd className="truncate">
                           <Cell col={c} value={r[c.key]} labels={labels} />
                         </dd>

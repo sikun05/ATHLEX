@@ -25,7 +25,7 @@ export default async function AdminAttendancePage() {
       <Card title={`Today · ${rows.length} check-ins · ${rows.filter((r) => !r.check_out_at).length} on the floor`} className="mt-4">
         <div className="-mx-5 overflow-x-auto sm:mx-0">
           <table className="w-full min-w-[36rem] text-left text-sm">
-            <thead className="font-mono text-[0.6rem] uppercase tracking-[0.18em] text-smoke">
+            <thead className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-smoke">
               <tr>
                 <th className="px-5 py-3 font-normal sm:px-3">Member</th>
                 <th className="px-3 py-3 font-normal">In</th>

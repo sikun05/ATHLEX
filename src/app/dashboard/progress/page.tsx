@@ -54,7 +54,7 @@ export default async function ProgressPage() {
           <Card title="Body measurements" className="mt-4">
             <div className="-mx-5 overflow-x-auto sm:mx-0">
               <table className="w-full min-w-[44rem] text-left text-sm">
-                <thead className="font-mono text-[0.6rem] uppercase tracking-[0.18em] text-smoke">
+                <thead className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-smoke">
                   <tr>
                     {["Date", "Weight", "BMI", "Body fat", "Chest", "Waist", "Hips", "Arms", "Thighs", ""].map((h) => (
                       <th key={h} className="px-3 py-3 font-normal first:pl-5 sm:first:pl-3">

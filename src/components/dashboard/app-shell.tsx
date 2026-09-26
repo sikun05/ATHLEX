@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
+import { useCallback, useState } from "react";
+import { useOverlay } from "@/lib/hooks";
 import { toast } from "sonner";
 import { LogOut, Menu, X, ExternalLink } from "lucide-react";
 import { Logo } from "@/components/ui/logo";
@@ -31,6 +32,8 @@ export function AppShell({
   const pathname = usePathname();
   const router = useRouter();
   const [open, setOpen] = useState(false);
+  const close = useCallback(() => setOpen(false), []);
+  useOverlay(open, close);
   const root = nav[0]?.href;
   const isActive = (href: string) => (href === root ? pathname === href : pathname === href || pathname.startsWith(href + "/"));
 
@@ -57,12 +60,12 @@ export function AppShell({
         <Link href={root ?? "/"} aria-label="Dashboard home">
           <Logo />
         </Link>
-        <span className="rounded-full border border-volt/30 px-2 py-0.5 font-mono text-[0.55rem] uppercase tracking-[0.18em] text-volt">{area}</span>
+        <span className="rounded-full border border-volt/30 px-2 py-0.5 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-volt">{area}</span>
       </div>
       <div className="no-scrollbar flex-1 overflow-y-auto px-3 py-4">
         {groups.map((g) => (
           <div key={g} className="mb-5">
-            {g && <p className="mb-2 px-3 font-mono text-[0.58rem] uppercase tracking-[0.22em] text-ash">{g}</p>}
+            {g && <p className="mb-2 px-3 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-ash">{g}</p>}
             <ul className="space-y-0.5">
               {nav
                 .filter((n) => (n.group ?? "") === g)
@@ -94,7 +97,7 @@ export function AppShell({
             <p className="truncate text-sm font-semibold">{user.name}</p>
             <p className="truncate text-xs capitalize text-smoke">{user.role}</p>
           </div>
-          <button onClick={logout} aria-label="Sign out" className="grid size-9 place-items-center rounded-full text-smoke hover:bg-white/5 hover:text-danger">
+          <button onClick={logout} aria-label="Sign out" className="grid size-10 place-items-center rounded-full text-smoke hover:bg-white/5 hover:text-danger">
             <LogOut className="size-4" />
           </button>
         </div>
@@ -152,7 +155,7 @@ export function AppShell({
             const Icon = NAV_ICONS[n.icon];
             const active = isActive(n.href);
             return (
-              <Link key={n.href} href={n.href} aria-current={active ? "page" : undefined} className={cn("flex flex-col items-center gap-1 py-3 text-[0.6rem] font-semibold uppercase tracking-wider", active ? "text-volt" : "text-smoke")}>
+              <Link key={n.href} href={n.href} aria-current={active ? "page" : undefined} className={cn("flex flex-col items-center gap-1 py-3 text-[0.7rem] font-semibold uppercase tracking-wider", active ? "text-volt" : "text-smoke")}>
                 <Icon className="size-5" aria-hidden />
                 {n.label}
               </Link>

@@ -12,6 +12,9 @@ import { api, applyFieldErrors, ClientApiError } from "@/lib/client-api";
 import { Field, fieldA11y } from "@/components/ui/field";
 import { Button } from "@/components/ui/button";
 import { resetSessionCache } from "@/components/layout/use-session";
+import { getBrowserSupabase } from "@/lib/supabase/client";
+import { FacebookIcon, GoogleIcon } from "@/components/ui/social-icons";
+import { cn } from "@/lib/utils";
 import type { z } from "zod";
 
 function PasswordInput({ id, error, reg, autoComplete }: { id: string; error?: string; reg: object; autoComplete: string }) {
@@ -22,6 +25,40 @@ function PasswordInput({ id, error, reg, autoComplete }: { id: string; error?: s
       <button type="button" onClick={() => setShow((s) => !s)} aria-label={show ? "Hide password" : "Show password"} className="absolute right-3 top-1/2 grid size-8 -translate-y-1/2 place-items-center text-smoke hover:text-bone">
         {show ? <EyeOff className="size-4" /> : <Eye className="size-4" />}
       </button>
+    </div>
+  );
+}
+
+const PROVIDERS = [
+  { id: "google", label: "Google", Icon: GoogleIcon },
+  { id: "facebook", label: "Facebook", Icon: FacebookIcon },
+] as const;
+
+/** OAuth sign-in via Supabase; lands on /auth/callback which exchanges the code. Providers must be enabled in the Supabase dashboard. */
+export function SocialLogin({ next }: { next?: string }) {
+  const [busy, setBusy] = useState<string | null>(null);
+  const signIn = async (provider: (typeof PROVIDERS)[number]["id"]) => {
+    const supabase = getBrowserSupabase();
+    if (!supabase) return toast.error("Social login needs Supabase configured — use email in demo mode.");
+    setBusy(provider);
+    const redirectTo = `${location.origin}/auth/callback${next ? `?next=${encodeURIComponent(next)}` : ""}`;
+    const { error } = await supabase.auth.signInWithOAuth({ provider, options: { redirectTo } });
+    if (error) {
+      setBusy(null);
+      toast.error(error.message);
+    }
+  };
+  return (
+    <div className="mb-8">
+      <div className="grid gap-3">
+        {PROVIDERS.map(({ id, label, Icon }) => (
+          <Button key={id} type="button" variant="outline" loading={busy === id} disabled={busy !== null} onClick={() => signIn(id)} className="w-full normal-case tracking-normal text-sm">
+            <Icon className={cn("size-5", id === "facebook" && "text-[#1877F2]")} />
+            Continue with {label}
+          </Button>
+        ))}
+      </div>
+      <p className="mt-8 flex items-center gap-4 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-ash before:h-px before:flex-1 before:bg-white/10 after:h-px after:flex-1 after:bg-white/10">or with email</p>
     </div>
   );
 }
@@ -52,7 +89,7 @@ export function LoginForm({ next }: { next?: string }) {
         <PasswordInput id="login-password" error={e.password?.message} autoComplete="current-password" reg={register("password")} />
       </Field>
       <div className="flex justify-end">
-        <Link href="/forgot-password" className="text-sm text-smoke hover:text-volt">
+        <Link href="/forgot-password" className="-my-2 inline-block py-2 text-sm text-smoke hover:text-volt">
           Forgot password?
         </Link>
       </div>

@@ -10,7 +10,7 @@ export function Badge({ children, tone = "neutral", className }: { children: Rea
     danger: "border-danger/30 bg-danger/10 text-danger",
   };
   return (
-    <span className={cn("inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 font-mono text-[0.62rem] uppercase tracking-[0.14em]", tones[tone], className)}>
+    <span className={cn("inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 font-mono text-[0.7rem] uppercase tracking-[0.14em]", tones[tone], className)}>
       {children}
     </span>
   );

@@ -171,7 +171,7 @@ export function CheckoutFlow({
               <div className="h-1 overflow-hidden rounded-full bg-white/10">
                 <motion.div className="h-full bg-volt" initial={false} animate={{ width: i <= step ? "100%" : "0%" }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }} />
               </div>
-              <p className={cn("mt-2 font-mono text-[0.6rem] uppercase tracking-[0.18em]", i <= step ? "text-bone" : "text-ash")}>
+              <p className={cn("mt-2 font-mono text-[0.7rem] uppercase tracking-[0.18em]", i <= step ? "text-bone" : "text-ash")}>
                 <span className="text-volt">0{i + 1}</span> <span className="hidden sm:inline">{s}</span>
               </p>
             </li>
@@ -240,7 +240,7 @@ export function CheckoutFlow({
                   <p className="mt-6 rounded border border-warn/30 bg-warn/10 p-4 text-sm text-warn">Online payments are currently unavailable. Please visit the front desk or contact us on WhatsApp.</p>
                 ) : (
                   <>
-                    <div className="mt-6 flex flex-wrap gap-2 font-mono text-[0.6rem] uppercase tracking-[0.16em] text-smoke">
+                    <div className="mt-6 flex flex-wrap gap-2 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-smoke">
                       {["UPI", "Cards", "Net banking", "Wallets", "EMI"].map((m) => (
                         <span key={m} className="rounded-full border border-white/10 px-3 py-1.5">
                           {m}
@@ -290,7 +290,7 @@ export function CheckoutFlow({
       {/* Order summary */}
       <aside className="lg:col-span-4">
         <div className="sticky top-28 rounded-[var(--radius-card)] border border-white/[0.08] bg-graphite p-6 sm:p-8">
-          <h2 className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-smoke">Order summary</h2>
+          <h2 className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">Order summary</h2>
           <p className="display mt-4 text-4xl">{plan.name}</p>
           <p className="text-sm text-smoke">
             {plan.durationMonths} month{plan.durationMonths > 1 ? "s" : ""} · {plan.durationDays} days
@@ -304,7 +304,7 @@ export function CheckoutFlow({
           </ul>
 
           <div className="mt-6 border-t border-white/[0.08] pt-6">
-            <label htmlFor="coupon" className="flex items-center gap-2 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-smoke">
+            <label htmlFor="coupon" className="flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-smoke">
               <Tag className="size-3" /> Coupon code
             </label>
             <div className="mt-2 flex gap-2">

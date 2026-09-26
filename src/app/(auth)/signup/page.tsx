@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SignupForm } from "@/components/forms/auth-forms";
+import { SignupForm, SocialLogin } from "@/components/forms/auth-forms";
 
 export const metadata: Metadata = { title: "Create Account", robots: { index: false } };
 
@@ -8,8 +8,9 @@ export default async function SignupPage({ searchParams }: PageProps<"/signup">)
   const { next } = await searchParams;
   return (
     <>
-      <h1 className="display text-6xl">Join ATHLEX</h1>
+      <h1 className="display text-5xl sm:text-6xl">Join ATHLEX</h1>
       <p className="mb-10 mt-3 text-smoke">Create your account to buy a membership, book classes and track progress.</p>
+      <SocialLogin next={typeof next === "string" ? next : undefined} />
       <SignupForm next={typeof next === "string" ? next : undefined} />
       <p className="mt-8 text-center text-sm text-smoke">
         Already a member?{" "}

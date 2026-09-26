@@ -73,7 +73,7 @@ export function Calculators({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
           <div className="space-y-6">
             {tab !== "BMI" && (
               <fieldset>
-                <legend className="mb-2 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-smoke">Gender</legend>
+                <legend className="mb-2 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-smoke">Gender</legend>
                 <div className="grid grid-cols-2 gap-2">
                   {(["male", "female"] as const).map((g) => (
                     <label key={g} className={cn("cursor-pointer rounded-[var(--radius-card)] border px-4 py-3 text-center text-sm capitalize transition has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-volt", gender === g ? "border-volt bg-volt/10 text-volt" : "border-white/10 text-smoke hover:border-white/25")}>
@@ -101,14 +101,14 @@ export function Calculators({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
               <motion.div key={tab} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}>
                 {tab === "BMI" && (
                   <>
-                    <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-smoke">Your BMI</p>
-                    <p className="display mt-2 text-8xl tabular-nums">{bmiVal.toFixed(1)}</p>
+                    <p className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">Your BMI</p>
+                    <p className="display mt-2 text-6xl sm:text-8xl tabular-nums">{bmiVal.toFixed(1)}</p>
                     <p className={cn("mt-1 text-lg font-semibold", cat.tone)}>{cat.label}</p>
                     <div className="mt-8">
                       <div className="relative h-2 rounded-full bg-[linear-gradient(90deg,#ffb547_0%,#ffb547_14%,#3ee08f_14%,#3ee08f_40%,#ffb547_40%,#ffb547_60%,#ff5a4e_60%)]">
                         <motion.span className="absolute top-1/2 size-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-ink bg-bone" animate={{ left: `${gaugePos}%` }} transition={{ type: "spring", stiffness: 200, damping: 25 }} aria-hidden />
                       </div>
-                      <div className="mt-2 flex justify-between font-mono text-[0.58rem] text-ash">
+                      <div className="mt-2 flex justify-between font-mono text-[0.7rem] text-ash">
                         <span>15</span>
                         <span>18.5</span>
                         <span>25</span>
@@ -120,16 +120,16 @@ export function Calculators({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
                 )}
                 {tab === "BMR" && (
                   <>
-                    <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-smoke">Basal metabolic rate</p>
-                    <p className="display mt-2 text-8xl tabular-nums">{bmrVal.toLocaleString("en-IN")}</p>
+                    <p className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">Basal metabolic rate</p>
+                    <p className="display mt-2 text-6xl sm:text-8xl tabular-nums">{bmrVal.toLocaleString("en-IN")}</p>
                     <p className="mt-1 text-smoke">kcal / day at complete rest</p>
                     <p className="mt-8 text-sm leading-relaxed text-smoke">This is the energy your body needs just to function. Your real daily burn is higher — switch to Calories to include activity.</p>
                   </>
                 )}
                 {tab === "Calories" && (
                   <>
-                    <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-smoke">Daily target</p>
-                    <p className="display mt-2 text-8xl tabular-nums text-volt">{target.toLocaleString("en-IN")}</p>
+                    <p className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">Daily target</p>
+                    <p className="display mt-2 text-6xl sm:text-8xl tabular-nums text-volt">{target.toLocaleString("en-IN")}</p>
                     <p className="mt-1 text-smoke">kcal / day · maintenance {tdee.toLocaleString("en-IN")}</p>
                     <dl className="mt-8 grid grid-cols-3 gap-2 text-center">
                       {[
@@ -138,7 +138,7 @@ export function Calculators({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
                         ["Fats", fats],
                       ].map(([l, v]) => (
                         <div key={l} className="rounded bg-graphite p-3">
-                          <dt className="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-smoke">{l}</dt>
+                          <dt className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-smoke">{l}</dt>
                           <dd className="mt-1 text-xl font-bold tabular-nums">{v}g</dd>
                         </div>
                       ))}
@@ -157,10 +157,13 @@ export function Calculators({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
 
 function Slider({ id, label, unit, value, min, max, onChange }: { id: string; label: string; unit: string; value: number; min: number; max: number; onChange: (v: number) => void }) {
   const pct = ((value - min) / (max - min)) * 100;
+  // Free-typed text; only clamped on blur so "175" can be typed past min=140.
+  const [draft, setDraft] = useState<string | null>(null);
+  const clamp = (v: number) => Math.min(max, Math.max(min, v));
   return (
     <div>
       <div className="mb-2 flex items-baseline justify-between">
-        <label htmlFor={id} className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-smoke">
+        <label htmlFor={id} className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-smoke">
           {label}
         </label>
         <span className="flex items-baseline gap-1">
@@ -170,12 +173,17 @@ function Slider({ id, label, unit, value, min, max, onChange }: { id: string; la
             inputMode="numeric"
             min={min}
             max={max}
-            value={value}
+            value={draft ?? value}
             onChange={(e) => {
+              setDraft(e.target.value);
               const v = Number(e.target.value);
-              if (!Number.isNaN(v)) onChange(Math.min(max, Math.max(min, v)));
+              if (e.target.value && v >= min && v <= max) onChange(v);
             }}
-            className="w-16 bg-transparent text-right text-lg font-bold tabular-nums outline-none focus:text-volt"
+            onBlur={() => {
+              if (draft !== null) onChange(clamp(Number(draft) || value));
+              setDraft(null);
+            }}
+            className="w-20 bg-transparent py-1 text-right text-lg font-bold tabular-nums outline-none focus:text-volt"
           />
           <span className="text-xs text-smoke">{unit}</span>
         </span>
@@ -187,7 +195,7 @@ function Slider({ id, label, unit, value, min, max, onChange }: { id: string; la
         max={max}
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
-        className="h-1.5 w-full cursor-pointer appearance-none rounded-full bg-steel accent-volt [&::-webkit-slider-thumb]:size-5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border-4 [&::-webkit-slider-thumb]:border-ink [&::-webkit-slider-thumb]:bg-volt"
+        className="h-1.5 w-full cursor-pointer appearance-none rounded-full bg-steel accent-volt [&::-webkit-slider-thumb]:size-6[&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border-4 [&::-webkit-slider-thumb]:border-ink [&::-webkit-slider-thumb]:bg-volt"
         style={{ background: `linear-gradient(90deg, #c8ff2e ${pct}%, #1e1e21 ${pct}%)` }}
       />
     </div>
@@ -198,7 +206,7 @@ function Choice({ label, options, value, onChange }: { label: string; options: {
   const id = label.replace(/\s/g, "-").toLowerCase();
   return (
     <div>
-      <label htmlFor={id} className="mb-2 block font-mono text-[0.65rem] uppercase tracking-[0.18em] text-smoke">
+      <label htmlFor={id} className="mb-2 block font-mono text-[0.7rem] uppercase tracking-[0.18em] text-smoke">
         {label}
       </label>
       <select id={id} value={value} onChange={(e) => onChange(Number(e.target.value))} className="field">

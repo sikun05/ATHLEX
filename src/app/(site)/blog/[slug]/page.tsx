@@ -50,10 +50,10 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
         <Link href="/blog" className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-smoke hover:text-volt">
           <ArrowLeft className="size-3.5" /> Journal
         </Link>
-        <p className="mt-10 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-volt">{post.category}</p>
+        <p className="mt-10 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-volt">{post.category}</p>
         <h1 className="display mt-4 text-5xl sm:text-7xl">{post.title}</h1>
         <p className="mt-6 text-lg text-smoke">{post.excerpt}</p>
-        <p className="mt-8 flex flex-wrap items-center gap-3 font-mono text-[0.68rem] uppercase tracking-[0.16em] text-smoke">
+        <p className="mt-8 flex flex-wrap items-center gap-3 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-smoke">
           <span>By {post.author}</span>·<time dateTime={post.date}>{formatDate(post.date, { day: "numeric", month: "long", year: "numeric" })}</time>·
           <span className="inline-flex items-center gap-1">
             <Clock className="size-3" aria-hidden /> {post.readMinutes} min read
@@ -66,7 +66,7 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
         </div>
       </div>
       <Reveal className="container-x max-w-3xl py-16">
-        <div className="space-y-6 text-lg leading-[1.8] text-bone/85 first-letter:float-left first-letter:mr-3 first-letter:font-[family-name:var(--font-display)] first-letter:text-7xl first-letter:leading-[0.8] first-letter:text-volt">
+        <div className="space-y-6 text-lg leading-[1.8] text-bone/85 first-letter:float-left first-letter:mr-3 first-letter:font-[family-name:var(--font-display)] first-letter:text-6xl sm:first-letter:text-7xl first-letter:leading-[0.8] first-letter:text-volt">
           {post.body.map((para, i) => (
             <p key={i}>{para}</p>
           ))}

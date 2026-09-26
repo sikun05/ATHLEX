@@ -22,7 +22,7 @@ function ChartTooltip({ active, payload, label, unit, labelFormat }: { active?: 
         {payload[0].value}
         {unit && <span className="ml-0.5 font-normal text-smoke">{unit}</span>}
       </p>
-      <p className="font-mono text-[0.6rem] uppercase tracking-wider text-smoke">{labelFormat ? labelFormat(String(label)) : label}</p>
+      <p className="font-mono text-[0.7rem] uppercase tracking-wider text-smoke">{labelFormat ? labelFormat(String(label)) : label}</p>
     </div>
   );
 }

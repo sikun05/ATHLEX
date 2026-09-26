@@ -40,7 +40,7 @@ export default async function AttendancePage() {
           </div>
           <Card title="Last 12 weeks">
             <div className="flex gap-3">
-              <div className="grid grid-rows-7 gap-1 font-mono text-[0.55rem] text-ash" aria-hidden>
+              <div className="grid grid-rows-7 gap-1 font-mono text-[0.7rem] text-ash" aria-hidden>
                 {["M", "", "W", "", "F", "", "S"].map((d, i) => (
                   <span key={i} className="flex h-4 items-center">
                     {d}

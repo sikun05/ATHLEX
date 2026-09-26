@@ -32,7 +32,7 @@ export default async function MembershipPage() {
         <Card className="lg:col-span-2" title="Current plan">
           {active ? (
             <div className="flex flex-col gap-8 sm:flex-row sm:items-center">
-              <Ring value={active.daysRemaining} max={active.plan?.duration_days ?? 30} size={150} label={<span><span className="display block text-5xl">{active.daysRemaining}</span><span className="font-mono text-[0.55rem] uppercase tracking-[0.2em] text-smoke">days left</span></span>} />
+              <Ring value={active.daysRemaining} max={active.plan?.duration_days ?? 30} size={150} label={<span><span className="display block text-5xl">{active.daysRemaining}</span><span className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">days left</span></span>} />
               <dl className="grid flex-1 grid-cols-2 gap-5 text-sm">
                 <Item k="Plan" v={<span className="display text-3xl text-volt">{active.plan?.name}</span>} />
                 <Item k="Status" v={<Badge tone={active.daysRemaining <= 7 ? "warn" : "ok"}>{active.daysRemaining <= 7 ? "Expiring soon" : "Active"}</Badge>} />
@@ -66,7 +66,7 @@ export default async function MembershipPage() {
         {payments.length ? (
           <div className="-mx-5 overflow-x-auto sm:mx-0">
             <table className="w-full min-w-[40rem] text-left text-sm">
-              <thead className="font-mono text-[0.6rem] uppercase tracking-[0.18em] text-smoke">
+              <thead className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-smoke">
                 <tr>
                   <th className="px-5 py-3 font-normal sm:px-3">Date</th>
                   <th className="px-3 py-3 font-normal">Plan</th>
@@ -126,7 +126,7 @@ export default async function MembershipPage() {
 function Item({ k, v }: { k: string; v: React.ReactNode }) {
   return (
     <div>
-      <dt className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-smoke">{k}</dt>
+      <dt className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">{k}</dt>
       <dd className="mt-1.5">{v}</dd>
     </div>
   );

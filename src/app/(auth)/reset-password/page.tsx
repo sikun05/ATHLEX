@@ -7,7 +7,7 @@ export default async function ResetPage({ searchParams }: PageProps<"/reset-pass
   const { token } = await searchParams;
   return (
     <>
-      <h1 className="display text-6xl">New password</h1>
+      <h1 className="display text-5xl sm:text-6xl">New password</h1>
       <p className="mb-10 mt-3 text-smoke">Choose a strong password you haven&apos;t used before.</p>
       <ResetForm token={typeof token === "string" ? token : undefined} />
     </>

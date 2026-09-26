@@ -71,7 +71,7 @@ export function SettingsForm({ initial }: { initial: Settings }) {
         <input id="s-exp" name="expiry_reminder_days" className="field" defaultValue={initial.notifications.expiry_reminder_days.join(", ")} />
       </Field>
       <fieldset className="sm:col-span-2">
-        <legend className="mb-2 font-mono text-[0.68rem] uppercase tracking-[0.18em] text-smoke">Enabled channels</legend>
+        <legend className="mb-2 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-smoke">Enabled channels</legend>
         <div className="flex gap-6 text-sm">
           {(["email", "whatsapp", "sms"] as const).map((c) => (
             <label key={c} className="flex items-center gap-2 capitalize">

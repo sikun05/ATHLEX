@@ -77,7 +77,7 @@ export function Gallery({ items, limit, headingLevel = "h2", showFilters = true 
                     <span className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-100" aria-hidden />
                     {item.kind === "video" && <PlayBadge />}
                     <span className="absolute bottom-3 left-3 right-3 translate-y-2 text-left opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
-                      <span className="block font-mono text-[0.58rem] uppercase tracking-[0.2em] text-volt">{item.category}</span>
+                      <span className="block font-mono text-[0.7rem] uppercase tracking-[0.2em] text-volt">{item.category}</span>
                       <span className="block text-sm font-semibold">{item.title}</span>
                     </span>
                   </button>

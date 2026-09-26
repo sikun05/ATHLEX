@@ -31,7 +31,7 @@ export default async function AdminNotificationsPage() {
                   <p className="text-sm font-semibold">{n.title}</p>
                   <p className="text-sm text-smoke">{n.body}</p>
                 </div>
-                <time className="shrink-0 font-mono text-[0.6rem] text-ash">{formatDate(n.created_at, { day: "numeric", month: "short", hour: "numeric", minute: "2-digit" })}</time>
+                <time className="shrink-0 font-mono text-[0.7rem] text-ash">{formatDate(n.created_at, { day: "numeric", month: "short", hour: "numeric", minute: "2-digit" })}</time>
               </li>
             ))}
             {!feed.length && <li className="py-3 text-sm text-smoke">No alerts yet.</li>}

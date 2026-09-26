@@ -93,7 +93,7 @@ export function Cursor() {
           )}
         >
           {label && (
-            <motion.span initial={{ opacity: 0, scale: 0.6 }} animate={{ opacity: 1, scale: 1 }} className="font-mono text-[0.62rem] font-bold uppercase tracking-[0.2em] text-ink">
+            <motion.span initial={{ opacity: 0, scale: 0.6 }} animate={{ opacity: 1, scale: 1 }} className="font-mono text-[0.7rem] font-bold uppercase tracking-[0.2em] text-ink">
               {label}
             </motion.span>
           )}

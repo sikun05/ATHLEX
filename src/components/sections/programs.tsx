@@ -35,7 +35,6 @@ export function Programs({ programs }: { programs: Program[] }) {
 
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end end"] });
   const x = useSpring(useTransform(scrollYProgress, [0, 1], [0, -distance]), { stiffness: 140, damping: 30, mass: 0.4 });
-  const progress = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
     <section
@@ -75,7 +74,7 @@ export function Programs({ programs }: { programs: Program[] }) {
         {pinned && (
           <div className="container-x mt-10">
             <div className="h-px w-full bg-white/10">
-              <motion.div className="h-px bg-volt" style={{ width: progress }} />
+              <motion.div className="h-px origin-left bg-volt" style={{ scaleX: scrollYProgress }} />
             </div>
           </div>
         )}
@@ -110,7 +109,7 @@ function ProgramCard({ program, index }: { program: Program; index: number }) {
       </div>
 
       <div className="relative p-6 transition-transform duration-500 ease-[var(--ease-expo)] lg:translate-y-14 lg:group-hover:translate-y-0">
-        <p className="mb-3 font-mono text-[0.62rem] uppercase tracking-[0.2em] text-volt">
+        <p className="mb-3 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-volt">
           {program.level} · {program.duration}
         </p>
         <h3 className="display text-4xl sm:text-5xl">{program.name}</h3>

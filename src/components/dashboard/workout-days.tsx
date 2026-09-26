@@ -24,7 +24,7 @@ export function WorkoutDays({ days, exercises }: { days: string[]; exercises: Ex
         ))}
       </div>
       <div className="flex items-center justify-between px-5 pt-5">
-        <p className="font-mono text-[0.62rem] uppercase tracking-[0.2em] text-smoke">
+        <p className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">
           {completed}/{list.length} done today
         </p>
         <div className="h-1 w-32 overflow-hidden rounded-full bg-white/10">
@@ -49,15 +49,15 @@ export function WorkoutDays({ days, exercises }: { days: string[]; exercises: Ex
               </div>
               <dl className="grid grid-cols-3 gap-4 text-center text-sm sm:gap-8">
                 <div>
-                  <dt className="font-mono text-[0.55rem] uppercase text-smoke">Sets</dt>
+                  <dt className="font-mono text-[0.7rem] uppercase text-smoke">Sets</dt>
                   <dd className="font-bold">{e.sets}</dd>
                 </div>
                 <div>
-                  <dt className="font-mono text-[0.55rem] uppercase text-smoke">Reps</dt>
+                  <dt className="font-mono text-[0.7rem] uppercase text-smoke">Reps</dt>
                   <dd className="font-bold">{e.reps}</dd>
                 </div>
                 <div>
-                  <dt className="font-mono text-[0.55rem] uppercase text-smoke">Rest</dt>
+                  <dt className="font-mono text-[0.7rem] uppercase text-smoke">Rest</dt>
                   <dd className="font-bold">{e.rest >= 60 ? `${Math.floor(e.rest / 60)}:${String(e.rest % 60).padStart(2, "0")}` : `${e.rest}s`}</dd>
                 </div>
               </dl>
