@@ -51,7 +51,7 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
           <ArrowLeft className="size-3.5" /> Journal
         </Link>
         <p className="mt-10 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-volt">{post.category}</p>
-        <h1 className="display mt-4 text-5xl sm:text-7xl">{post.title}</h1>
+        <h1 className="display mt-4 text-h2">{post.title}</h1>
         <p className="mt-6 text-lg text-smoke">{post.excerpt}</p>
         <p className="mt-8 flex flex-wrap items-center gap-3 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-smoke">
           <span>By {post.author}</span>·<time dateTime={post.date}>{formatDate(post.date, { day: "numeric", month: "long", year: "numeric" })}</time>·
@@ -81,7 +81,7 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
       </Reveal>
       <section className="border-t border-white/[0.06] py-20" aria-label="Related articles">
         <div className="container-x">
-          <h2 className="display mb-10 text-4xl">Keep reading</h2>
+          <h2 className="display mb-10 text-h3">Keep reading</h2>
           <ul className="grid gap-8 md:grid-cols-3">
             {related.map((p) => (
               <li key={p.slug}>

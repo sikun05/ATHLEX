@@ -36,7 +36,7 @@ export default async function TrainersPage() {
                   <p className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-volt">
                     {t.position} · {t.experienceYears} years
                   </p>
-                  <h2 className="display mt-3 text-5xl sm:text-7xl">{t.name}</h2>
+                  <h2 className="display mt-3 text-h2">{t.name}</h2>
                   <p className="mt-2 text-lg text-bone/80">{t.specialization}</p>
                   <p className="mt-6 max-w-xl leading-relaxed text-smoke">{t.bio}</p>
                   <ul className="mt-6 flex flex-wrap gap-2">

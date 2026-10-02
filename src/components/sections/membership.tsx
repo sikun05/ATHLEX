@@ -53,12 +53,12 @@ export function PlanCard({ plan: p }: { plan: Plan }) {
       <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-smoke">
         {p.durationMonths} {p.durationMonths === 1 ? "Month" : "Months"}
       </p>
-      <h3 className={cn("display mt-3 text-5xl", p.highlighted && "text-volt")}>{p.name}</h3>
+      <h3 className={cn("display mt-3 text-h3", p.highlighted && "text-volt")}>{p.name}</h3>
       <p className="mt-2 text-sm text-smoke">{p.tagline}</p>
 
       <div className="mt-8 border-t border-white/[0.08] pt-8">
         <div className="flex items-end gap-3">
-          <span className="display text-5xl sm:text-6xl">{inr(p.price)}</span>
+          <span className="display text-stat">{inr(p.price)}</span>
         </div>
         <p className="mt-2 flex flex-wrap items-center gap-2 text-xs text-smoke">
           {p.compareAt && <span className="line-through decoration-danger/70">{inr(p.compareAt)}</span>}

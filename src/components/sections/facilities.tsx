@@ -27,7 +27,7 @@ export function Facilities({ items }: { items: Facility[] }) {
                     <span className="mb-4 grid size-10 place-items-center rounded-full bg-volt/15 text-volt backdrop-blur transition group-hover:bg-volt group-hover:text-ink">
                       <Icon className="size-4" aria-hidden />
                     </span>
-                    <h3 className={cn("display", feature ? "text-4xl sm:text-5xl" : "text-3xl")}>{f.name}</h3>
+                    <h3 className={cn("display", feature ? "text-h3" : "text-2xl sm:text-3xl")}>{f.name}</h3>
                     <div className="grid transition-[grid-template-rows,opacity] duration-500 ease-[var(--ease-expo)] [@media(hover:hover)]:grid-rows-[0fr] [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:grid-rows-[1fr] [@media(hover:hover)]:group-hover:opacity-100 [@media(hover:hover)]:group-focus:grid-rows-[1fr] [@media(hover:hover)]:group-focus:opacity-100">
                       <p className="overflow-hidden pt-2 text-sm text-bone/75">{f.description}</p>
                     </div>

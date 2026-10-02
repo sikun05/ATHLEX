@@ -19,13 +19,13 @@ export function Footer() {
   const opacity = useTransform(scrollYProgress, [0, 0.6, 1], [0.2, 0.6, 1]);
 
   return (
-    <footer ref={ref} className="relative overflow-hidden border-t border-white/[0.06] bg-coal pt-20">
+    <footer ref={ref} className="relative overflow-hidden border-t border-white/[0.06] bg-coal pt-14 sm:pt-20">
       <div className="pointer-events-none absolute -left-40 top-0 size-[40rem] rounded-full bg-volt/[0.04] blur-[140px]" aria-hidden />
       <div className="container-x relative">
-        <div className="grid gap-14 lg:grid-cols-12">
+        <div className="grid gap-12 md:grid-cols-2 md:gap-x-12 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-4">
             <Logo />
-            <p className="mt-6 max-w-sm text-sm leading-relaxed text-smoke">
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-smoke sm:mt-6">
               A premium strength & performance club for people who take training seriously — and want to enjoy every rep of it.
             </p>
             <ul className="mt-8 flex gap-2" aria-label="Social media">
@@ -45,7 +45,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:col-span-5">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 md:order-last md:col-span-2 lg:order-none lg:col-span-5">
             <FooterCol title="Explore" links={footerNav.explore} />
             <FooterCol title="Programs" links={programs.slice(0, 6).map((p) => ({ href: `/programs/${p.slug}`, label: p.name }))} />
             <FooterCol title="Membership" links={footerNav.tools} />
@@ -73,7 +73,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col-reverse items-start justify-between gap-6 border-t border-white/[0.06] py-8 text-xs text-ash sm:flex-row sm:items-center">
+        <div className="mt-12 flex flex-col-reverse items-start justify-between gap-4 border-t sm:mt-16 sm:gap-6 border-white/[0.06] py-8 text-xs text-ash sm:flex-row sm:items-center">
           <p>
             © {new Date().getFullYear()} {site.legalName}. All rights reserved.
           </p>
@@ -109,7 +109,7 @@ function FooterCol({ title, links }: { title: string; links: readonly { href: st
   return (
     <div>
       <h3 className="eyebrow">{title}</h3>
-      <ul className="mt-4 space-y-1">
+      <ul className="mt-3 space-y-0.5 sm:mt-4 sm:space-y-1">
         {links.map((l) => (
           <li key={l.href + l.label}>
             <Link href={l.href} className="group inline-flex items-center gap-2 py-1.5 text-sm text-smoke transition hover:text-bone">

@@ -96,7 +96,7 @@ export function Testimonials({ items }: { items: Testimonial[] }) {
           </div>
 
           <div className="flex items-center justify-between gap-6 lg:col-span-3 lg:flex-col lg:items-end">
-            <p className="display text-6xl sm:text-7xl tabular-nums">
+            <p className="display text-stat tabular-nums">
               {pad(index + 1)}
               <span className="text-2xl text-ash">/{pad(items.length)}</span>
             </p>

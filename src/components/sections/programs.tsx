@@ -112,7 +112,7 @@ function ProgramCard({ program, index }: { program: Program; index: number }) {
         <p className="mb-3 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-volt">
           {program.level} · {program.duration}
         </p>
-        <h3 className="display text-4xl sm:text-5xl">{program.name}</h3>
+        <h3 className="display text-h3">{program.name}</h3>
         <p className="mt-3 max-w-xs text-sm leading-relaxed text-bone/70 transition-opacity duration-500 lg:opacity-0 lg:group-hover:opacity-100">{program.short}</p>
       </div>
     </Link>

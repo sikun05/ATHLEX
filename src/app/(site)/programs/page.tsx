@@ -42,7 +42,7 @@ export default function ProgramsPage() {
                       ))}
                     </span>
                   </p>
-                  <h2 className="display mt-3 text-5xl">{p.name}</h2>
+                  <h2 className="display mt-3 text-h3">{p.name}</h2>
                   <p className="mt-2 text-sm text-bone/70">{p.short}</p>
                 </div>
               </Link>

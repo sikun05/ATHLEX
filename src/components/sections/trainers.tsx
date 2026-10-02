@@ -60,7 +60,7 @@ export function TrainerCard({ trainer: t }: { trainer: Trainer }) {
 
       <div className="absolute inset-x-0 bottom-0 p-6">
         <p className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-volt">{t.position}</p>
-        <h3 className="display mt-2 text-4xl">{t.name}</h3>
+        <h3 className="display mt-2 text-h3">{t.name}</h3>
         <p className="mt-1 text-sm text-bone/70">{t.specialization}</p>
 
         {/* Details reveal on hover (desktop) — always visible on touch */}

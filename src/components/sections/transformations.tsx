@@ -26,7 +26,7 @@ export function Transformations({ items, headingLevel = "h2" }: { items: Transfo
                 <p className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-volt">
                   {t.program} · {t.duration}
                 </p>
-                <h3 className="display mt-4 text-5xl sm:text-6xl">{t.name}</h3>
+                <h3 className="display mt-4 text-h3">{t.name}</h3>
                 <p className="display mt-3 text-3xl text-outline sm:text-4xl">{t.result}</p>
                 <blockquote className="mt-8 border-l-2 border-volt pl-5">
                   <Quote className="mb-3 size-5 text-volt" aria-hidden />

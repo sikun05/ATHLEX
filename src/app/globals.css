@@ -24,6 +24,18 @@
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 
+  /* Fluid display scale (375 → 1440px). One source of truth for every heading size. */
+  --text-hero: clamp(2.9rem, 0.5rem + 11.5vw, 10.5rem);
+  --text-hero--line-height: 0.86;
+  --text-h1: clamp(2.6rem, 1rem + 6.4vw, 7.5rem);
+  --text-h1--line-height: 0.88;
+  --text-h2: clamp(2.25rem, 1.1rem + 4.2vw, 5.5rem);
+  --text-h2--line-height: 0.9;
+  --text-h3: clamp(1.75rem, 1.2rem + 1.6vw, 3rem);
+  --text-h3--line-height: 0.95;
+  --text-stat: clamp(2.5rem, 1.6rem + 2.4vw, 3.75rem);
+  --text-stat--line-height: 0.9;
+
   --radius-card: 6px;
 
   --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -178,7 +190,10 @@
   }
 
   .section-y {
-    padding-block: 6rem;
+    padding-block: 4.5rem;
+  }
+  @media (min-width: 40rem) {
+    .section-y { padding-block: 6rem; }
   }
   @media (min-width: 64rem) {
     .section-y { padding-block: 9rem; }

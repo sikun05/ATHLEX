@@ -44,7 +44,7 @@ export default async function ProgramPage({ params }: PageProps<"/programs/[slug
         <div className="container-x grid gap-14 lg:grid-cols-12">
           <Reveal className="lg:col-span-7">
             <p className="text-xl leading-relaxed text-bone/85">{p.description}</p>
-            <h2 className="display mt-14 text-4xl">What you&apos;ll achieve</h2>
+            <h2 className="display mt-14 text-h3">What you&apos;ll achieve</h2>
             <ul className="mt-6 space-y-4">
               {p.outcomes.map((o) => (
                 <li key={o} className="flex items-center gap-4 text-lg">

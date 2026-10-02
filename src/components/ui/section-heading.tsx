@@ -26,7 +26,7 @@ export function SectionHeading({
         <span className="h-px w-8 bg-volt" aria-hidden />
         <span className="eyebrow">{eyebrow}</span>
       </Reveal>
-      <SplitWords as={as} text={title} className="display max-w-[14ch] text-5xl sm:text-6xl lg:text-7xl xl:text-8xl" />
+      <SplitWords as={as} text={title} className="display max-w-[14ch] text-h2" />
       {children && (
         <Reveal delay={0.15} className={cn("max-w-xl text-base leading-relaxed text-smoke sm:text-lg", align === "center" && "mx-auto")}>
           {children}

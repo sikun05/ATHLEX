@@ -160,7 +160,7 @@ export function CheckoutFlow({
     <div className="grid gap-10 lg:grid-cols-12">
       <div className="lg:col-span-8">
         <p className="eyebrow">Checkout</p>
-        <h1 className="display mt-3 text-5xl sm:text-7xl">
+        <h1 className="display mt-3 text-h1">
           {plan.name} <span className="text-outline">membership</span>
         </h1>
 
@@ -278,7 +278,7 @@ export function CheckoutFlow({
                   <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 260, damping: 16 }} className="grid size-24 place-items-center rounded-full bg-volt text-ink">
                     <Check className="size-12" strokeWidth={3} />
                   </motion.div>
-                  <h2 className="display mt-8 text-5xl">Membership created</h2>
+                  <h2 className="display mt-8 text-h2">Membership created</h2>
                   <p className="mt-3 text-smoke">Payment verified. Preparing your receipt…</p>
                 </div>
               </Panel>

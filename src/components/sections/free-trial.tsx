@@ -24,7 +24,7 @@ export function FreeTrial() {
         <Reveal>
           <p className="eyebrow">No commitment · 100% free</p>
         </Reveal>
-        <SplitWords as="h2" id="trial-heading" text="Ready to start?" className="display mt-6 text-[clamp(3.5rem,13vw,10rem)]" highlight={[2]} />
+        <SplitWords as="h2" id="trial-heading" text="Ready to start?" className="display mt-6 text-hero" highlight={[2]} />
         <Reveal delay={0.2}>
           <p className="mt-6 max-w-md text-lg text-bone/75">Experience the gym before you commit. A coach, a tour, a real workout — on us.</p>
         </Reveal>

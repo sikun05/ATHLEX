@@ -31,7 +31,7 @@ export function About({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
             <span className="h-px w-8 bg-volt" aria-hidden />
             <span className="eyebrow">More than a gym</span>
           </Reveal>
-          <SplitWords as={headingLevel} id="about-title" text="This is where transformation begins." className="display mt-6 text-5xl sm:text-6xl xl:text-7xl" highlight={[3]} />
+          <SplitWords as={headingLevel} id="about-title" text="This is where transformation begins." className="display mt-6 text-h2" highlight={[3]} />
           <Reveal delay={0.1} className="mt-8 space-y-5 text-base leading-relaxed text-smoke sm:text-lg">
             <p>
               ATHLEX was built by coaches who were tired of crowded, uninspiring gyms. Every square foot — from the calibrated platforms to the recovery lounge — is designed to help
@@ -44,7 +44,7 @@ export function About({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
             {stats.map((s, i) => (
               <Reveal key={s.label} delay={0.1 + i * 0.08} className="bg-ink p-6 sm:p-8">
                 <dt className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">{s.label}</dt>
-                <dd className="display mt-2 text-5xl sm:text-6xl">
+                <dd className="display mt-2 text-stat">
                   <Counter to={s.value} suffix={s.suffix} />
                 </dd>
               </Reveal>

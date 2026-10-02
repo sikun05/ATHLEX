@@ -36,7 +36,7 @@ export default async function AboutPage() {
       <section className="section-y" aria-labelledby="values-title">
         <div className="container-x">
           <Reveal>
-            <h2 id="values-title" className="display text-5xl sm:text-7xl">
+            <h2 id="values-title" className="display text-h2">
               What we stand for
             </h2>
           </Reveal>
@@ -44,7 +44,7 @@ export default async function AboutPage() {
             {values.map(([t, d], i) => (
               <StaggerItem as="li" key={t} className="bg-ink p-8 sm:p-10">
                 <span className="font-mono text-xs text-volt">0{i + 1}</span>
-                <h3 className="display mt-4 text-4xl">{t}</h3>
+                <h3 className="display mt-4 text-h3">{t}</h3>
                 <p className="mt-3 max-w-md text-smoke">{d}</p>
               </StaggerItem>
             ))}
@@ -55,7 +55,7 @@ export default async function AboutPage() {
       <Trainers trainers={trainers} limit={3} />
       <section className="section-y bg-coal" aria-labelledby="faq-title">
         <div className="container-x grid gap-12 lg:grid-cols-12">
-          <h2 id="faq-title" className="display text-5xl sm:text-7xl lg:col-span-4">
+          <h2 id="faq-title" className="display text-h2 lg:col-span-4">
             FAQ
           </h2>
           <div className="divide-y divide-white/[0.08] lg:col-span-8">

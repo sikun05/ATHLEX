@@ -66,7 +66,7 @@ export default async function MembershipPage() {
 
       <section className="section-y" aria-labelledby="compare-title">
         <div className="container-x">
-          <h2 id="compare-title" className="display text-5xl sm:text-6xl">
+          <h2 id="compare-title" className="display text-h2">
             Compare plans
           </h2>
           <div className="mt-10 overflow-x-auto rounded-[var(--radius-card)] border border-white/[0.08]">
@@ -105,7 +105,7 @@ export default async function MembershipPage() {
 
       <section className="section-y bg-coal pt-20" aria-labelledby="mfaq">
         <div className="container-x grid gap-12 lg:grid-cols-12">
-          <h2 id="mfaq" className="display text-5xl lg:col-span-4">
+          <h2 id="mfaq" className="display text-h2 lg:col-span-4">
             Questions
           </h2>
           <div className="divide-y divide-white/[0.08] lg:col-span-8">

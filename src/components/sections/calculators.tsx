@@ -102,7 +102,7 @@ export function Calculators({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
                 {tab === "BMI" && (
                   <>
                     <p className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">Your BMI</p>
-                    <p className="display mt-2 text-6xl sm:text-8xl tabular-nums">{bmiVal.toFixed(1)}</p>
+                    <p className="display mt-2 text-h2 tabular-nums">{bmiVal.toFixed(1)}</p>
                     <p className={cn("mt-1 text-lg font-semibold", cat.tone)}>{cat.label}</p>
                     <div className="mt-8">
                       <div className="relative h-2 rounded-full bg-[linear-gradient(90deg,#ffb547_0%,#ffb547_14%,#3ee08f_14%,#3ee08f_40%,#ffb547_40%,#ffb547_60%,#ff5a4e_60%)]">
@@ -121,7 +121,7 @@ export function Calculators({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
                 {tab === "BMR" && (
                   <>
                     <p className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">Basal metabolic rate</p>
-                    <p className="display mt-2 text-6xl sm:text-8xl tabular-nums">{bmrVal.toLocaleString("en-IN")}</p>
+                    <p className="display mt-2 text-h2 tabular-nums">{bmrVal.toLocaleString("en-IN")}</p>
                     <p className="mt-1 text-smoke">kcal / day at complete rest</p>
                     <p className="mt-8 text-sm leading-relaxed text-smoke">This is the energy your body needs just to function. Your real daily burn is higher — switch to Calories to include activity.</p>
                   </>
@@ -129,7 +129,7 @@ export function Calculators({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
                 {tab === "Calories" && (
                   <>
                     <p className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-smoke">Daily target</p>
-                    <p className="display mt-2 text-6xl sm:text-8xl tabular-nums text-volt">{target.toLocaleString("en-IN")}</p>
+                    <p className="display mt-2 text-h2 tabular-nums text-volt">{target.toLocaleString("en-IN")}</p>
                     <p className="mt-1 text-smoke">kcal / day · maintenance {tdee.toLocaleString("en-IN")}</p>
                     <dl className="mt-8 grid grid-cols-3 gap-2 text-center">
                       {[

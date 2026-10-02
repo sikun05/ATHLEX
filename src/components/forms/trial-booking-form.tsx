@@ -52,7 +52,7 @@ export function TrialBookingForm({ defaultInterest, onDone }: { defaultInterest?
       {booked ? (
         <motion.div key="done" initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} className="flex flex-col items-center py-6 text-center" role="status">
           <SuccessCheck />
-          <h3 className="display mt-6 text-4xl">You&apos;re booked, {booked.name}!</h3>
+          <h3 className="display mt-6 text-h3">You&apos;re booked, {booked.name}!</h3>
           <p className="mt-3 max-w-sm text-sm text-smoke">
             Your free trial is set for <strong className="text-bone">{formatDate(booked.date, { weekday: "long", day: "numeric", month: "long" })}</strong> at{" "}
             <strong className="text-bone">{label(booked.time)}</strong>. We&apos;ve sent a confirmation to your email & WhatsApp — our team will call to confirm.

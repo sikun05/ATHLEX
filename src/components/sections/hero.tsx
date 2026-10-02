@@ -79,7 +79,7 @@ export function Hero() {
           Train hard. Live strong.
         </motion.p>
 
-        <h1 className="display text-[clamp(3.6rem,15vw,11.5rem)] leading-[0.84]" aria-label="Build your strongest self.">
+        <h1 className="display text-hero" aria-label="Build your strongest self.">
           {WORDS.map((w, i) => (
             <span key={w} aria-hidden className="block overflow-hidden pb-[0.04em] sm:inline-block sm:pr-[0.18em]">
               <motion.span

@@ -22,7 +22,7 @@ export default async function FreeTrialPage({ searchParams }: PageProps<"/free-t
       <div className="container-x relative grid gap-14 pb-24 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <p className="eyebrow">Free trial</p>
-          <SplitWords as="h1" text="Ready to start?" animateOnMount className="display mt-6 text-[clamp(3.5rem,10vw,8rem)]" highlight={[2]} />
+          <SplitWords as="h1" text="Ready to start?" animateOnMount className="display mt-6 text-h1" highlight={[2]} />
           <Reveal delay={0.3}>
             <p className="mt-6 max-w-md text-lg text-bone/75">Experience the gym before you commit.</p>
             <ul className="mt-10 space-y-4">
@@ -38,7 +38,7 @@ export default async function FreeTrialPage({ searchParams }: PageProps<"/free-t
           </Reveal>
         </div>
         <Reveal delay={0.2} className="glass rounded-[var(--radius-card)] p-6 sm:p-10 lg:col-span-7">
-          <h2 className="display mb-8 text-4xl">Book your session</h2>
+          <h2 className="display mb-8 text-h3">Book your session</h2>
           <TrialBookingForm defaultInterest={typeof interest === "string" ? interest : undefined} />
         </Reveal>
       </div>

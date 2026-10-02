@@ -41,25 +41,25 @@ export function Navbar() {
             scrolled ? "glass border-x-0 border-t-0" : "border-b border-transparent bg-gradient-to-b from-black/50 to-transparent",
           )}
         >
-          <nav aria-label="Main" className="container-x flex h-[var(--header-h)] items-center justify-between gap-6">
+          <nav aria-label="Main" className="container-x flex h-[var(--header-h)] items-center justify-between gap-4 xl:gap-6">
             <Link href="/" aria-label="ATHLEX home" className="shrink-0">
               <Logo />
             </Link>
 
-            <ul className="hidden items-center gap-1 lg:flex">
+            <ul className="hidden items-center lg:flex xl:gap-1">
               {nav.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
                     aria-current={isActive(item.href) ? "page" : undefined}
                     className={cn(
-                      "relative px-3.5 py-2 text-[0.78rem] font-medium uppercase tracking-[0.12em] transition-colors",
+                      "relative px-2.5 py-2 text-[0.72rem] font-medium uppercase tracking-[0.1em] transition-colors xl:px-3.5 xl:text-[0.78rem] xl:tracking-[0.12em]",
                       isActive(item.href) ? "text-bone" : "text-smoke hover:text-bone",
                     )}
                   >
                     {item.label}
                     {isActive(item.href) && (
-                      <motion.span layoutId="nav-active" className="absolute inset-x-3.5 -bottom-0.5 h-[2px] bg-volt" transition={{ type: "spring", stiffness: 380, damping: 30 }} />
+                      <motion.span layoutId="nav-active" className="absolute inset-x-2.5 -bottom-0.5 h-[2px] bg-volt xl:inset-x-3.5" transition={{ type: "spring", stiffness: 380, damping: 30 }} />
                     )}
                   </Link>
                 </li>

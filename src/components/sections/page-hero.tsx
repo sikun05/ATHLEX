@@ -18,7 +18,7 @@ export function PageHero({ eyebrow, title, children, image }: { eyebrow: string;
           <span className="h-px w-10 bg-volt" aria-hidden />
           <span className="eyebrow">{eyebrow}</span>
         </Reveal>
-        <SplitWords as="h1" text={title} animateOnMount delay={0.15} className="display mt-6 max-w-[16ch] text-[clamp(3.2rem,10vw,9rem)]" />
+        <SplitWords as="h1" text={title} animateOnMount delay={0.15} className="display mt-6 max-w-[16ch] text-h1" />
         {children && (
           <Reveal delay={0.4} className="mt-6 max-w-xl text-base text-bone/70 sm:text-lg">
             {children}

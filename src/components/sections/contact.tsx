@@ -85,7 +85,7 @@ export function Contact({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" })
           </div>
 
           <Reveal className="rounded-[var(--radius-card)] border border-white/[0.06] bg-graphite/50 p-6 sm:p-10 lg:col-span-12">
-            <h3 className="display mb-8 text-4xl">Send a message</h3>
+            <h3 className="display mb-8 text-h3">Send a message</h3>
             <ContactForm />
           </Reveal>
         </div>
