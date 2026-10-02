@@ -4,12 +4,15 @@
  * section reads its imagery from here or from the database.
  */
 const u = (id: string, w = 1600) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=75`;
+const px = (id: number, w = 1200) => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
 
 export const media = {
   hero: u("photo-1534438327276-14e5300c3a48", 2400),
   heroAlt: u("photo-1517836357463-d25dfeac3438", 2000),
   about: u("photo-1540497077202-7c8a3999166f", 1600),
   aboutDetail: u("photo-1571902943202-507ec2618e8f", 1200),
+  // About collage: Unsplash + Pexels (both free-to-use licences)
+  aboutCollage: [u("photo-1584466977773-e625c37cdd50", 1000), px(1552242), u("photo-1593079831268-3381b0db4a77", 1200), px(260352, 1000)],
   trial: u("photo-1583454110551-21f2fa2afe61", 2000),
   contact: u("photo-1574680096145-d05b474e2155", 2000),
   og: u("photo-1534438327276-14e5300c3a48", 1200),

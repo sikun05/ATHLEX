@@ -1,28 +1,14 @@
-import { media } from "@/lib/media";
 import { stats } from "@/lib/content";
-import { Photo } from "@/components/ui/photo";
+import { AboutCollage } from "./about-collage";
 import { ButtonLink } from "@/components/ui/button";
-import { ClipReveal, Counter, Parallax, Reveal, SplitWords } from "@/components/motion/reveal";
+import { Counter, Reveal, SplitWords } from "@/components/motion/reveal";
 
 export function About({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
   return (
     <section aria-labelledby="about-title" className="section-y relative overflow-hidden">
       <div className="container-x grid items-center gap-14 lg:grid-cols-12 lg:gap-20">
-        <div className="relative lg:col-span-6">
-          <ClipReveal className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-card)]">
-            <Parallax className="absolute inset-0" offset={60}>
-              <Photo src={media.about} alt="Inside the ATHLEX strength floor" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" data-cursor="view" />
-            </Parallax>
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" aria-hidden />
-          </ClipReveal>
-          <Reveal direction="left" delay={0.3} className="absolute -bottom-8 right-4 w-40 sm:-right-6 sm:w-56 lg:-right-10">
-            <div className="relative aspect-square overflow-hidden rounded-[var(--radius-card)] border-4 border-ink shadow-2xl">
-              <Photo src={media.aboutDetail} alt="Coach guiding a member" fill sizes="224px" className="object-cover" />
-            </div>
-          </Reveal>
-          <div className="absolute left-4 top-4 rounded-full bg-ink/70 px-4 py-2 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-volt backdrop-blur">
-            Est. 2020 · Bengaluru
-          </div>
+        <div className="lg:col-span-6">
+          <AboutCollage />
         </div>
 
         <div className="lg:col-span-6">

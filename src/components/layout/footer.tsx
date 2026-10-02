@@ -15,7 +15,7 @@ export function Footer() {
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end end"] });
-  const x = useTransform(scrollYProgress, [0, 1], ["-8%", "0%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["-3%", "0%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.6, 1], [0.2, 0.6, 1]);
 
   return (
@@ -97,7 +97,7 @@ export function Footer() {
       <motion.p
         aria-hidden
         style={reduce ? undefined : { x, opacity }}
-        className="display pointer-events-none -mb-[0.12em] select-none whitespace-nowrap text-center text-[14.5vw] leading-[0.8] text-outline"
+        className="display pointer-events-none -mb-[0.12em] mt-6 select-none whitespace-nowrap text-center text-[clamp(3.25rem,17vw,19rem)] leading-[0.8] text-outline sm:mt-10"
       >
         Get stronger.
       </motion.p>
